@@ -6,12 +6,9 @@ class Solution:
             "{": "}",
         }
         stack: list = []
-        for char in s:
-            if char in closing_bracket_by_opening_bracket:
-                stack.append(char)
-            elif not stack:
+        for character in s:
+            if character in closing_bracket_by_opening_bracket:
+                stack.append(character)
+            elif not stack or character != closing_bracket_by_opening_bracket[stack.pop()]:
                 return False
-            else:
-                if not char == closing_bracket_by_opening_bracket[stack.pop()]:
-                    return False
         return len(stack) == 0
