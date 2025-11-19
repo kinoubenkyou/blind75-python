@@ -6,11 +6,10 @@ class Solution:
         for price in prices[1:]:
             if price < buying_price:
                 profit = selling_price - buying_price
-                if max_profit < profit:
+                if profit > max_profit:
                     max_profit = profit
-                buying_price = price
-                selling_price = price
+                buying_price = selling_price = price
             elif price > selling_price:
                 selling_price = price
         profit = selling_price - buying_price
-        return max_profit if max_profit > profit else profit
+        return profit if profit > max_profit else max_profit
