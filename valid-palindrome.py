@@ -1,8 +1,8 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         normalized: list[int] = []
-        for char in s:
-            code_point = ord(char)
+        for character in s:
+            code_point = ord(character)
             if 65 <= code_point <= 90:
                 normalized.append(code_point + 32)
             elif 48 <= code_point <= 57 or 97 <= code_point <= 122:
