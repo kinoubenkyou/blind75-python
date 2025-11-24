@@ -1,7 +1,6 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        start = 0
-        stop = len(nums)
+        start, stop = 0, len(nums)
         while True:
             median_index = start + (stop - start) // 2
             median = nums[median_index]
