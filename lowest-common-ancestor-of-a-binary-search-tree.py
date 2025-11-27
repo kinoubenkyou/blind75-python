@@ -10,7 +10,7 @@ class Solution:
         while True:
             if root == p or root == q:
                 return root
-            if root.val > p.val and root.val > q.val:
+            elif root.val > p.val and root.val > q.val:
                 root = root.left
             elif root.val < p.val and root.val < q.val:
                 root = root.right
